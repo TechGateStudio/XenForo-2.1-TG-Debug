@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<template_modifications/>
+<template_modifications>
+  <modification type="public" template="PAGE_CONTAINER" modification_key="tgd_debug_modif" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="debug_macros" name="debug"
+					arg-controller="{$controller}"
+					arg-action="{$actionMethod}"
+					arg-template="{$template}" />]]></find>
+    <replace><![CDATA[<xf:if is="{{ $xf.visitor.canViewDebug() }}">
+$0
+</xf:if>]]></replace>
+  </modification>
+</template_modifications>

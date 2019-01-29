@@ -9,7 +9,7 @@ class Listener
 		$app->container()->extend('config', function($o, \XF\Container $c)
 		{
 			$options = \XF::options();
-			
+            
 			if ($options->tgdebugDebugMode)
 			{
 				$o['debug'] = true;
